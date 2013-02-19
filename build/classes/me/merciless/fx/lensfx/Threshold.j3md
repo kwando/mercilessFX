@@ -1,0 +1,19 @@
+MaterialDef Threshold {
+
+    MaterialParameters {
+      Int NumSamples
+      Texture2D Texture
+      Float Threshold
+      Float Amount
+    }
+
+    Technique {
+        VertexShader GLSL100:   Common/MatDefs/Post/Post.vert
+        FragmentShader GLSL100: me/merciless/fx/lensfx/Threshold.frag
+
+        WorldParameters {
+            WorldViewProjectionMatrix
+        }
+    }
+
+}

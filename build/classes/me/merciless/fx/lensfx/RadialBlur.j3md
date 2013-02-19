@@ -1,0 +1,22 @@
+MaterialDef RadialBlur {
+
+    MaterialParameters {
+      Int NumSamples
+      Texture2D Texture
+      Float Threshold
+      Vector3 Chromatic
+      Float FlareDispersal
+      Float FlareHaloWidth
+    }
+
+    Technique {
+        VertexShader GLSL100:   me/merciless/fx/lensfx/RadialBlur.vert
+        FragmentShader GLSL100: me/merciless/fx/lensfx/RadialBlur.frag
+
+        WorldParameters {
+            WorldViewProjectionMatrix
+            Aspect
+        }
+    }
+
+}
